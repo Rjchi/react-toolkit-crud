@@ -4,6 +4,8 @@
 
 // 1- Para instalar ridux toolkit npm install @reduxjs/toolkit react-redux (librerias)
 // 2- crear el Store (el lugar donde vamos a almacenar nuestros datos)
+// 3- instalar la extencion Ridux DevTools y React Developer Tools
+// 4- instalar una libreria llamada uuid npm i uuid para generar ids unicos basada en un estandar
 
 import React from "react";
 import ReactDOM from "react-dom/client";
