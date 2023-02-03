@@ -58,10 +58,17 @@ export const taskSlice = createSlice({
     },
     // reducer para actualizar una tarea de mi estado
     updateTask: (state, action) => {
-        // Tomamos solo el titulo y la descripcion del payload
+        // Tomamos solo el id el titulo y la descripcion del payload (del objeto task) que biene en los parametros
         const { id, title, description } = action.payload;
         // Si la tarea es igual al id de la tarea que esta en el pyload entonces encontramos la tarea
-        const tarea = state.find((tarea) = tarea.id === id)
+        const tareaEncontrada = state.find((tarea) => tarea.id === id)
+        // Si ha encontrado una tarea entonces actualizamela
+        if (tareaEncontrada) {
+          // La tarea en la propiedad title va ha ser igual a el title que bino por los parametros
+          // Y con esto el estado se actualiza sin necesidad de crear un nuevo arreglo(para mostrar por pantalla)
+          tareaEncontrada.title = title
+          tareaEncontrada.description = description
+        }
     },
   },
 });
